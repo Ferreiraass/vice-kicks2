@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VICE KICKS - Sneakers & Streetwear</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#090914;color:#fff;font-family:Arial,sans-serif}
+header{background:#111122;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ff3f9b}
+.logo{font-size:30px;font-weight:900}
+.logo span{color:#ff3f9b}
+nav a{color:white;text-decoration:none;margin:0 12px;font-size:13px;font-weight:bold}
+nav a:hover{color:#39e7ed}
+.hero{
+min-height:550px;padding:100px 8%;
+background:linear-gradient(90deg,#090914,#090914aa),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1600') center/cover;
+display:flex;align-items:center
+}
+.hero h1{font-size:75px;text-transform:uppercase}
+.hero h1 span{color:#ff3f9b}
+.hero p{max-width:450px;line-height:1.8;margin:20px 0;color:#ccc}
+.btn{display:inline-block;background:#ff3f9b;color:white;padding:15px 25px;text-decoration:none;font-weight:bold}
+.btn:hover{background:#39e7ed;color:#090914}
+.section{padding:70px 8%}
+h2{font-size:40px;margin-bottom:30px;text-transform:uppercase}
+h2 span{color:#ff3f9b}
+.filters{margin-bottom:25px}
+.filters button{background:transparent;color:white;border:1px solid #555;padding:10px 18px;margin:4px;cursor:pointer}
+.filters button:hover,.filters button.active{background:#39e7ed;color:#090914}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{background:#171729;border:1px solid #333;transition:.3s}
+.product:hover{transform:translateY(-8px);border-color:#ff3f9b}
+.product img{width:100%;height:200px;object-fit:cover}
+.info{padding:18px}
+.info h3{margin:10px 0}
+.info p{color:#aaa;font-size:13px}
+.price{color:#39e7ed;font-size:19px;font-weight:bold;margin-top:15px}
+.add{display:block;width:100%;padding:12px;background:#ff3f9b;color:white;border:0;margin-top:15px;cursor:pointer;font-weight:bold}
+.add:hover{background:#39e7ed;color:#090914}
+.banner{margin:30px 8%;padding:60px 40px;background:linear-gradient(90deg,#1b1037,#32113b);border:1px solid #ff3f9b}
+.banner h2{font-size:45px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature{background:#171729;padding:25px;border:1px solid #333}
+.feature h3{color:#39e7ed;margin-bottom:12px}
+.feature p{color:#bbb;line-height:1.7;font-size:14px}
+.newsletter{background:#201332;padding:55px 8%;text-align:center}
+.newsletter input{padding:14px;width:260px;max-width:100%;border:0;margin-top:20px}
+.newsletter button{padding:14px;background:#ff3f9b;color:white;border:0;cursor:pointer}
+footer{padding:35px 8%;background:#05050c;color:#aaa;text-align:center}
+footer span{color:#ff3f9b}
+@media(max-width:850px){
+.products{grid-template-columns:repeat(2,1fr)}
+nav{display:none}
+.hero h1{font-size:55px}
+}
+@media(max-width:550px){
+.products{grid-template-columns:1fr}
+.features{grid-template-columns:1fr}
+.hero h1{font-size:45px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">VICE<span>KICKS.</span></div>
+<nav>
+<a href="#inicio">INÍCIO</a>
+<a href="#colecao">COLEÇÃO</a>
+<a href="#sobre">SOBRE</a>
+<a href="#contato">CONTATO</a>
+</nav>
+</header>
+
+<section class="hero" id="inicio">
+<div>
+<h1>O SEU ESTILO.<br><span>SUA CIDADE.</span></h1>
+<p>Do asfalto às luzes de neon: encontre os sneakers que combinam com sua atitude. Uma coleção feita para quem não nasceu para passar despercebido.</p>
+<a href="#colecao" class="btn">EXPLORAR COLEÇÃO ↗</a>
+</div>
+</section>
+
+<section class="section" id="colecao">
+<h2>DROP DA <span>TEMPORADA.</span></h2>
+<div class="filters">
+<button class="active" onclick="filterProducts('todos',this)">Todos</button>
+<button onclick="filterProducts('street',this)">Streetwear</button>
+<button onclick="filterProducts('casual',this)">Casual</button>
+<button onclick="filterProducts('sport',this)">Esportivo</button>
+</div>
+
+<div class="products">
+<div class="product" data-category="street">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600">
+<div class="info"><h3>NEON RUNNER X</h3><p>Estilo urbano e atitude.</p><div class="price">R$ 499,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+
+<div class="product" data-category="casual">
+<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600">
+<div class="info"><h3>OCEAN LOW</h3><p>Conforto para qualquer ocasião.</p><div class="price">R$ 389,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+
+<div class="product" data-category="sport">
+<img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600">
+<div class="info"><h3>TURBO 86</h3><p>Performance e velocidade.</p><div class="price">R$ 559,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+
+<div class="product" data-category="street">
+<img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=600">
+<div class="info"><h3>MIDNIGHT 305</h3><p>Personalidade nas ruas.</p><div class="price">R$ 429,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+
+<div class="product" data-category="casual">
+<img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600">
+<div class="info"><h3>SUNSET CLASSIC</h3><p>Um visual cheio de personalidade.</p><div class="price">R$ 349,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+
+<div class="product" data-category="sport">
+<img src="https://images.unsplash.com/photo-1460353581641-37baddon?w=600">
+<div class="info"><h3>VELOCITY PRO</h3><p>Leveza para ir mais longe.</p><div class="price">R$ 599,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+
+<div class="product" data-category="street">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600">
+<div class="info"><h3>VICE CITY 01</h3><p>Clássico com estilo moderno.</p><div class="price">R$ 469,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+
+<div class="product" data-category="casual">
+<img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?w=600">
+<div class="info"><h3>COASTLINE</h3><p>Seu parceiro para explorar a cidade.</p><div class="price">R$ 319,90</div><button class="add" onclick="addCart()">ADICIONAR À SACOLA</button></div>
+</div>
+</div>
+</section>
+
+<section class="banner">
+<h2>CRIE SEU <span>CAMINHO.</span></h2>
+<p>Mais do que tênis: uma forma de mostrar quem você é.</p>
+<br>
+<a href="#colecao" class="btn">VER LANÇAMENTOS</a>
+</section>
+
+<section class="section" id="sobre">
+<h2>FEITA PARA AS <span>RUAS.</span></h2>
+<div class="features">
+<div class="feature"><h3>✦ ESTILO AUTÊNTICO</h3><p>Modelos selecionados para expressar sua personalidade em qualquer lugar.</p></div>
+<div class="feature"><h3>↗ CONFORTO</h3><p>Opções pensadas para acompanhar sua rotina e seus melhores momentos.</p></div>
+<div class="feature"><h3>◈ VICE CITY VIBES</h3><p>Cores, atitude e referências inspiradas no universo de GTA VI.</p></div>
+</div>
+</section>
+
+<section class="newsletter" id="contato">
+<h2>FIQUE POR DENTRO DOS <span>DROPS.</span></h2>
+<p>Receba novidades e lançamentos da Vice Kicks.</p>
+<form onsubmit="subscribe(event)">
+<input type="email" placeholder="Digite seu e-mail" required>
+<button type="submit">CADASTRAR</button>
+</form>
+</section>
+
+<footer>
+<div class="logo">VICE<span>KICKS.</span></div>
+<p>Seu próximo passo começa aqui.</p>
+<br>
+<p>© 2026 VICE KICKS - TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+
+<script>
+let cart=0;
+function addCart(){
+cart++;
+alert("Produto adicionado! Itens na sacola: "+cart);
+}
+function filterProducts(category,button){
+document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+document.querySelectorAll(".product").forEach(product=>{
+product.style.display=category==="todos"||product.dataset.category===category?"block":"none";
+});
+}
+function subscribe(event){
+event.preventDefault();
+alert("Cadastro realizado com sucesso!");
+event.target.reset();
+}
+</script>
+
+</body>
+</html>
